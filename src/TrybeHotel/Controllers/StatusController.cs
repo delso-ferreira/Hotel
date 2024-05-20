@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
+//init
 
 namespace TrybeHotel.Controllers
 {
