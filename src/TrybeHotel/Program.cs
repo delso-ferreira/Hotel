@@ -70,7 +70,7 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("Admin", policy => policy.RequireClaim(ClaimTypes.Email).RequireClaim(ClaimTypes.Role, "admin"));
 });
 
-var port = builder.Configuration["port"];
+var port = builder.Configuration["PORT"];
 builder.WebHost.UseUrls($"http://*{port}");
 
 var app = builder.Build();
@@ -84,7 +84,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-app.UseHttpsRedirection();
+/* app.UseHttpsRedirection(); */
 app.UseRouting();
 
 // app.UseCors(MyAllowSpecificOrigins);
