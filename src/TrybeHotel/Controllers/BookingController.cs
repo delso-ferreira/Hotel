@@ -21,6 +21,8 @@ namespace TrybeHotel.Controllers
             _repository = repository;
         }
 
+        // teste
+
         [HttpPost]        
         [Authorize(Policy = "Client")]
         public IActionResult Add([FromBody] BookingDtoInsert bookingInsert){
