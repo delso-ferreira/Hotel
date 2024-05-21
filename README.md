@@ -1,10 +1,10 @@
-#HotelBookingAPI 🏨 🔄 🌐
+<h1>HotelBookingAPI 🏨 🔄 🌐</h1>
 
-##Descrição
+<h2>Descrição</h2>
 
 A **HotelBookingAPI** é uma aplicação desenvolvida em C# utilizando arquitetura MVC que interage com um banco de dados MySQL. Esta API permite que os usuários busquem hotéis próximos à sua localização, façam reservas de hotéis e quartos, e realizem operações CRUD (Criação, Busca, Alteração e Exclusão) sobre os dados armazenados. Para garantir a segurança e controle de acesso, a API utiliza Policy e Claims, juntamente com JWT (JSON Web Token).
 
-#Funcionalidades
+<h2>Funcionalidades</h2>	
 
 **Busca de Hotéis:** Pesquise hotéis próximos à localização do usuário dentro de um raio específico em quilômetros.
 
@@ -13,7 +13,7 @@ A **HotelBookingAPI** é uma aplicação desenvolvida em C# utilizando arquitetu
 **Segurança:** Implementação de JWT para autenticação e uso de Policy e Claims para controle de acesso.
 
 
-##Tecnologias Utilizadas
+<h2>Tecnologias Utilizadas</h2>
 
 --  C#
 --  ASP.NET Core MVC
@@ -22,22 +22,21 @@ A **HotelBookingAPI** é uma aplicação desenvolvida em C# utilizando arquitetu
 --  Pomello
 --  JWT (JSON Web Token)
 
-##Requisitos
+<h2>Requisitos</h2>
 
 .NET 6 SDK
 Servidor MySQL
 Ferramenta de gerenciamento de banco de dados (e.g., MySQL Workbench)
 
-##Instalação
+<h2>Instalação</h2>
 Clone o repositório:
 
-bash
 ```
 git clone https://github.com/seuusuario/HotelBookingAPI.git
 cd HotelBookingAPI
 ```
 
-Instalar as dependências:
+Instale as dependências:
 
 ```
 dotnet restore
@@ -55,10 +54,11 @@ Iniciar a aplicação:
 dotnet run
 ```
 
-##Uso
+<h2>Uso</h2>
+
 A aplicação está disponível publicamente em: [HotelBookingAPI](https://hotel-production-9bb8.up.railway.app/)
 
-##Exemplos:
+*Exemplos:*
 
 ***Buscar hóteis***
 
@@ -183,7 +183,7 @@ Resposta:
 }
 ```
 
-Autenticação e Autorização
+<h2>Autenticação e Autorização</h2>
 
 A API utiliza JWT para autenticação. Para acessar endpoints protegidos, o usuário deve incluir um token JWT válido no 
 
@@ -213,7 +213,7 @@ Resposta:
 Utilize o token recebido para acessar endpoints protegidos adicionando-o ao cabeçalho Authorization
 
 
-##Contribuição
+<h2>Contribuição</h2>
 
 Sinta-se à vontade para contribuir com o projeto. Para isso, siga os passos abaixo:
 
