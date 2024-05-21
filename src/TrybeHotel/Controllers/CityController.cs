@@ -5,7 +5,7 @@ using TrybeHotel.Repository;
 namespace TrybeHotel.Controllers
 {
     [ApiController]
-    [Route("{city}")]
+    [Route("city")]
     public class CityController : Controller
     {
         private readonly ICityRepository _repository;
