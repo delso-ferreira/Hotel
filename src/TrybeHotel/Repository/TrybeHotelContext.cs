@@ -17,7 +17,7 @@ public class TrybeHotelContext : DbContext, ITrybeHotelContext
     {
         /* var connectionString = "Server=localhost;Database=TrybeHotel;User=SA;Password=TrybeHotel12!;TrustServerCertificate=True"; */
 
-        var connectionString = "Server=roundhouse.proxy.rlwy.net;Database=railway;User Id=root;Password=kMyAhaGysTDfdaPQlocjaqRDKAlSicvb;Port=25471;TrustServerCertificate=True";
+        var connectionString = "Server=roundhouse.proxy.rlwy.net;Database=railway;User Id=root;Password=kMyAhaGysTDfdaPQlocjaqRDKAlSicvb;Port=25471";
         optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)); 
 
         if (!optionsBuilder.IsConfigured)
