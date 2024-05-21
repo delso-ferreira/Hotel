@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using TrybeHotel.Dto;
 
+//teste commit
+
 namespace TrybeHotel.Controllers
 {
     [ApiController]
