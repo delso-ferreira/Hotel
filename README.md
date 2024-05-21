@@ -15,12 +15,12 @@ A **HotelBookingAPI** é uma aplicação desenvolvida em C# utilizando arquitetu
 
 <h2>Tecnologias Utilizadas</h2>
 
---  C#
---  ASP.NET Core MVC
---  MySQL
---  Entity Framework
---  Pomello
---  JWT (JSON Web Token)
+✔️  C#
+✔️  ASP.NET Core MVC
+✔️  MySQL
+✔️  Entity Framework
+✔️  Pomelo
+✔️  JWT (JSON Web Token)
 
 <h2>Requisitos</h2>
 
