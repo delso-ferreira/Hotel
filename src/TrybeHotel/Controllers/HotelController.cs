@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 namespace TrybeHotel.Controllers
 {
     [ApiController]
-    [Route("hotel")]
+    [Route("{hotel}")]
     public class HotelController : Controller
     {
         private readonly IHotelRepository _repository;
