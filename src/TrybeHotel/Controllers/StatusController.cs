@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace TrybeHotel.Controllers
 {
     [ApiController]
-    [Route("/status")]
+    [Route("/")]
     public class StatusController : Controller
     {
     
