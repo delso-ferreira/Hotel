@@ -2,7 +2,7 @@
 
 <h2>Descrição</h2>
 
-A **HotelBookingAPI** é uma aplicação desenvolvida em C# utilizando arquitetura MVC que interage com um banco de dados MySQL. Esta API permite que os usuários busquem hotéis próximos à sua localização, façam reservas de hotéis e quartos, e realizem operações CRUD (Criação, Busca, Alteração e Exclusão) sobre os dados armazenados. Para garantir a segurança e controle de acesso, a API utiliza Policy e Claims, juntamente com JWT (JSON Web Token).
+A **HotelBookingAPI** é uma aplicação desenvolvida em C# dentro do curso de desenvolvimento web da **Trybe**. Foi utilizada a arquitetura MVC que interage com um banco de dados MySQL. Esta API permite que os usuários busquem hotéis próximos à sua localização, façam reservas de hotéis e quartos, e realizem operações CRUD (Criação, Busca, Alteração e Exclusão) sobre os dados armazenados. Para garantir a segurança e controle de acesso, a API utiliza Policy e Claims, juntamente com JWT (JSON Web Token).
 
 <h2>Funcionalidades</h2>	
 
