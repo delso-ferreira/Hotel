@@ -16,13 +16,13 @@ public class TrybeHotelContext : DbContext, ITrybeHotelContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
     {
         
-        var connectionString = Environment.GetEnvironmentVariable("DATABASE_CONNECTION_STRING");        
+        var connectionString = Environment.GetEnvironmentVariable(DATABASE_CONNECTION_STRING);        
         optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)); 
 
-        if (!optionsBuilder.IsConfigured)
+        /* if (!optionsBuilder.IsConfigured)
         {
             optionsBuilder.UseSqlServer(connectionString);
-        }
+        } */
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
