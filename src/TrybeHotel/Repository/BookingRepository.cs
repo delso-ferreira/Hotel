@@ -37,8 +37,7 @@ namespace TrybeHotel.Repository
                 _context.Bookings.Add(newbooking);
                 _context.SaveChanges();
                
-                // retornar um novo booking no formato BookingResponse que está no BookingDTO
-
+                
                 var addBokkings = _context.Bookings.Where(b => b.UserId == user.UserId).Select(b => new BookingResponse
                 {
                     BookingId = b.BookingId,
@@ -73,12 +72,9 @@ namespace TrybeHotel.Repository
 
         public BookingResponse GetBooking(int bookingId, string email)
         {
-            //localizar o id do usuário
-
+            
             var user = _context.Users.Where(e => e.Email == email).First();
-
-            //localizar reserva
-
+            
             var getBooking = _context.Bookings.Where(b => b.BookingId == bookingId && b.UserId == user.UserId)
             .Select(b => new BookingResponse
             {

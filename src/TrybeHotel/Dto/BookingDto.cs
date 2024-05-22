@@ -8,8 +8,7 @@ namespace TrybeHotel.Dto
         public int RoomId { get; set; }        
     }
 
-    // teste2
-
+    
     public class BookingResponse
     {
         public int BookingId { get; set; }

@@ -9,7 +9,6 @@ using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<TrybeHotelContext>();
@@ -76,7 +75,7 @@ builder.WebHost.UseUrls($"http://*:{port};http://localhost:5000;");
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -85,10 +84,10 @@ if (app.Environment.IsDevelopment())
 }
 
 
-/* app.UseHttpsRedirection(); */
+
 app.UseRouting();
 
-// app.UseCors(MyAllowSpecificOrigins);
+
 app.UseCors(c => c.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseAuthentication();

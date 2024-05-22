@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using TrybeHotel.Dto;
 
-//teste commit
 
 namespace TrybeHotel.Controllers
 {
@@ -23,7 +22,6 @@ namespace TrybeHotel.Controllers
             _repository = repository;
         }
 
-        // teste
 
         [HttpPost]        
         [Authorize(Policy = "Client")]
