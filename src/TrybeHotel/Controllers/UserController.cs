@@ -49,7 +49,7 @@ namespace TrybeHotel.Controllers
                 };
 
                 var addUser = _repository.Add(newUserWithHash);
-                return Created("", addUser);
+                return Created("", newUserWithHash);
             }
             catch (Exception e)
             {
