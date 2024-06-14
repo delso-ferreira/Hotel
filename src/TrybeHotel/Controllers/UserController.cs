@@ -39,7 +39,16 @@ namespace TrybeHotel.Controllers
         {
             try
             {
-                var addUser = _repository.Add(user);
+                var hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
+
+                var newUserWithHash = new UserDtoInsert
+                {
+                    Name = user.Name,
+                    Email = user.Email,
+                    Password = hashedPassword
+                };
+
+                var addUser = _repository.Add(newUserWithHash);
                 return Created("", addUser);
             }
             catch (Exception e)

@@ -17,7 +17,12 @@ namespace TrybeHotel.Repository
 
         public UserDto Login(LoginDto login)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Email == login.Email && u.Password == login.Password) ?? throw new Exception("Invalid email or password");
+            var user = _context.Users.FirstOrDefault(u => u.Email == login.Email);
+
+            if (user == null || !BCrypt.Net.BCrypt.Verify(login.Password, user.Password))
+            {
+                throw new Exception("Invalid email or password");
+            }
             return new UserDto
            {
                 UserId = user.UserId,
