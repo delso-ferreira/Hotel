@@ -34,8 +34,7 @@ namespace TrybeHotel.Controllers
             }
         }
 
-        [HttpGet]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpGet]        
         public IActionResult GetUserByEmail([FromQuery] string email)
         {
             try
