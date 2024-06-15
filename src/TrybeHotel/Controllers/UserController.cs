@@ -76,7 +76,7 @@ namespace TrybeHotel.Controllers
             }
         }
 
-        [HttpGet]
+       /*  [HttpGet]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult GetUserById([FromQuery] int userId)
         {
@@ -89,7 +89,7 @@ namespace TrybeHotel.Controllers
             {
                 return NotFound(new { message = e.Message });
             }
-        }
+        } */
         
     }
 }
