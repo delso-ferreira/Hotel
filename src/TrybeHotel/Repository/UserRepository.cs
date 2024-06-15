@@ -12,7 +12,14 @@ namespace TrybeHotel.Repository
         }
         public UserDto GetUserById(int userId)
         {
-            throw new NotImplementedException();
+            var user = _context.Users.Find(userId) ?? throw new Exception("User not found");
+            return new UserDto
+            {
+                UserId = user.UserId,
+                Name = user.Name,
+                Email = user.Email,
+                UserType = user.UserType
+            };
         }
 
         public UserDto Login(LoginDto login)
@@ -64,7 +71,14 @@ namespace TrybeHotel.Repository
 
         public UserDto GetUserByEmail(string userEmail)
         {
-            throw new NotImplementedException();
+            var user = _context.Users.FirstOrDefault(u => u.Email == userEmail) ?? throw new Exception("User not found");
+            return new UserDto
+            {
+                UserId = user.UserId,
+                Name = user.Name,
+                Email = user.Email,
+                UserType = user.UserType
+            };
         }
 
         public IEnumerable<UserDto> GetUsers()

@@ -34,6 +34,20 @@ namespace TrybeHotel.Controllers
             }
         }
 
+        [HttpGet]
+        public IActionResult GetUserByEmail([FromQuery] string email)
+        {
+            try
+            {
+                var user = _repository.GetUserByEmail(email);
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+                return NotFound(new { message = e.Message });
+            }
+        }
+
         [HttpPost]        
         public IActionResult Add([FromBody] UserDtoInsert user)
         {
@@ -60,5 +74,20 @@ namespace TrybeHotel.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet]
+        public IActionResult GetUserById([FromQuery] int userId)
+        {
+            try
+            {
+                var user = _repository.GetUserById(userId);
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+                return NotFound(new { message = e.Message });
+            }
+        }
+        
     }
 }
