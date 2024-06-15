@@ -71,7 +71,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 var port = builder.Configuration["PORT"];
-builder.WebHost.UseUrls($"http://*:{port};http://localhost:5000;");
+builder.WebHost.UseUrls($"http://*:{port};http://localhost:4200;");
 
 
 var app = builder.Build();
