@@ -34,7 +34,8 @@ builder.Services.AddCors(options =>
                       policy  =>
                       {
                           policy.WithOrigins("https://nominatim.openstreetmap.org",
-                                              "https://openstreetmap.org");
+                                              "https://openstreetmap.org",
+                                              "http://localhost:4200");
                       });
 });
 
