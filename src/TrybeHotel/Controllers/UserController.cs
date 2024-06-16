@@ -35,7 +35,7 @@ namespace TrybeHotel.Controllers
         }
 
         [HttpGet]        
-        public IActionResult GetUserByEmail([FromQuery] string email)
+        public IActionResult GetUserByEmail(string email)
         {
             try
             {
