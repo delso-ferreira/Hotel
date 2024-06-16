@@ -9,7 +9,6 @@ using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddControllers();
 builder.Services.AddDbContext<TrybeHotelContext>();
 builder.Services.AddScoped<ITrybeHotelContext, TrybeHotelContext>();
@@ -20,25 +19,25 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddHttpClient<IGeoService, GeoService>();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllersWithViews()
                 .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddHttpClient();
 
-var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy  =>
+                      policy =>
                       {
                           policy.WithOrigins("https://nominatim.openstreetmap.org",
-                                              "https://openstreetmap.org",
-                                              "http://localhost:4200");
+                                             "https://openstreetmap.org",
+                                             "http://localhost:4200")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
                       });
 });
-
 
 builder.Services.Configure<TokenOptions>(
     builder.Configuration.GetSection(TokenOptions.Token)
@@ -73,9 +72,7 @@ builder.Services.AddAuthorization(options =>
 var port = builder.Configuration["PORT"];
 builder.WebHost.UseUrls($"http://*:{port};http://localhost:4200;");
 
-
 var app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {
@@ -84,17 +81,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
-
 app.UseRouting();
 
-
-app.UseCors(c => c.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthentication();
 
 app.UseAuthorization();
-
 
 app.MapControllers();
 
