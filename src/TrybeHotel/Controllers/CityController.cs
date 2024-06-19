@@ -20,6 +20,12 @@ namespace TrybeHotel.Controllers
             return Ok(findAllCities);
         }
 
+        [HttpGet("{id}")]
+        public IActionResult GetCityById(int id){
+            var findCityById = _repository.GetCityById(id);
+            return Ok(findCityById);
+        }
+
         [HttpPost]
         public IActionResult PostCity([FromBody] City city){
             var insertCity = _repository.AddCity(city);

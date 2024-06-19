@@ -34,7 +34,7 @@ namespace TrybeHotel.Controllers
             }
         }
 
-        [HttpGet]        
+        /* [HttpGet]        
         public IActionResult GetUserByEmail([FromQuery] string email)
         {
             try
@@ -46,7 +46,7 @@ namespace TrybeHotel.Controllers
             {
                 return NotFound(new { message = e.Message });
             }
-        }        
+        }         */
             
 
         [HttpPost]        

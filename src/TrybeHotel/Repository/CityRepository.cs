@@ -24,6 +24,16 @@ namespace TrybeHotel.Repository
             return allCities;            
         }
 
+        public CityDto GetCityById(int id)
+        {
+            var city = _context.Cities.Find(id);
+            return new CityDto {
+                CityId = city.CityId,
+                Name = city.Name,
+                State = city.State
+            };
+        }
+
         
         public CityDto AddCity(City city)
         {

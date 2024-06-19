@@ -32,5 +32,20 @@ namespace TrybeHotel.Controllers
                 return Unauthorized(new { message = "Incorrect e-mail or password" });
             }
         }
+
+        [HttpGet]
+        public IActionResult Login([FromQuery] string email)
+        {
+            try
+            {
+                var user = _repository.GetUserByEmail(email);
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+                return NotFound(new { message = e.Message });
+            }
+
         }
+    }
     }
